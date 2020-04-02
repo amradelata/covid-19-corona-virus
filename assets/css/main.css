@@ -1,0 +1,216 @@
+
+.searchcard {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    
+}
+.searchcard span, .searchcard label{
+  
+  display: inline-block;
+  margin: 0 20px ;
+}
+.insearchcardFull{
+  padding: 10px;
+  margin: 10px 0;
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.insearchcardFull:hover
+  {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.insearchcard{
+  padding: 10px;
+  margin: 10px 0;
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.insearchcard:hover
+  {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.mygif img{
+  width: 100%;
+}
+.coronavirus{
+  width: 47px;
+  height: 47px;
+}
+.recovered{
+    width: 40px;
+  height: 40px;
+}
+body{
+    background:#2c3e50;
+    color: #ecf0f1;
+}
+.tabs a{
+  color: #fff
+}
+.tabs li{
+  width: 25%;
+  }
+.tabs a:hover{
+  color: #fff
+}
+.mypiecards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.mypiecard {
+  font-size: xx-large;
+  text-align: center;
+  flex-basis: calc(33.333% - 20px) !important;
+  display: inline-block;
+  margin: 10px;
+  padding: 35px 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6313725490196078),
+    0 3px 6px rgba(0, 0, 0, 0.53);
+}
+.myfooter{
+  padding: 35px 0;
+}
+h1{
+  font-size:3rem 
+}
+h2{
+  font-size:1.5rem 
+}
+.myHead{
+    padding-top: 100px;
+    text-align: center;
+}
+
+.ar{
+    font-family: 'Cairo', sans-serif;
+
+}
+
+.tabs{
+  
+  margin: 35px 0;
+}
+.tabs ul li:hover a span{
+  color: #2c3e50 ;
+}
+
+.table {
+  
+  /* margin: 0 !important; */
+  margin: auto !important;
+}
+.tableHead{
+  font-size:  1.25rem ;
+   font-weight: bolder;
+  min-width: 270px !important;
+
+  
+}
+td {
+  min-width: 270px !important;
+}
+label {
+  display: block;
+  margin: 35px 0;
+  
+}
+.mycards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 100px 0;
+  width: 100%;
+}
+
+
+.mycard {
+  font-size: xx-large;
+  text-align: center;
+  flex-basis: calc(25% - 20px);
+  display: inline-block;
+  margin: 10px;
+  padding: 26px ;
+  box-shadow:0 3px 6px rgba(0, 0, 0, 0.6313725490196078), 0 3px 6px rgba(0, 0, 0, 0.53)
+}
+button{
+    margin-bottom: 20px;
+}
+.mybuttonDisktop{
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+/* .mybuttonPhone{
+  display: none;
+  margin: 0;
+  padding: 0;
+} */
+
+@media screen and (max-width: 768px) {
+h1{
+  font-size:1.25rem 
+}
+.mycard {
+      flex-basis: calc(100% - 20px);
+}
+.table-container{
+  width: 100vw !important;
+  
+  /* display: none; */
+
+}
+.tableHead{
+  font-size:  1rem ;
+ 
+}
+td{
+    padding: 15px !important;
+
+}
+
+.container.is-fluid{
+  padding-left: 10px; 
+    padding-right: 10px;
+}
+.myHead {
+  padding-top: 35px;
+}
+.mycards {
+  padding: 35px 0;
+}
+.mybutton{
+  margin-bottom: 35px;
+}
+button{
+  font-size: 20px !important;
+}
+.mypiecard{
+  flex-basis: calc(100% - 20px) !important;
+}
+
+/* .mybuttonDisktop{
+  display: none;
+} */
+.mybuttonPhone{
+  display: block;
+}
+.mygif img {
+  margin-top: 65px;}
+.tabs li{
+  width: 100%;
+}
+.searchcard span, .searchcard label{
+    margin: 0 5px ;
+}
+.insearchcard {
+  padding: 5px;
+  width: 49%;
+}
+.insearchcardFull{
+  width: 100%;
+}
+}
