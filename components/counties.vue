@@ -37,8 +37,7 @@
 
 <script>
 import axios from "axios";
-const countiesDataAPI =
-  "https://corona.lmao.ninja/countries?sort=%7Bparameter%7D";
+const countiesDataAPI = "https://corona.lmao.ninja/v2/countries";
 export default {
   data() {
     return {

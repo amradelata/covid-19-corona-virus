@@ -16,8 +16,7 @@
 
 <script>
 import axios from "axios";
-const countiesDataAPI =
-  "https://corona.lmao.ninja/countries?sort=%7Bparameter%7D";
+const countiesDataAPI = "https://corona.lmao.ninja/v2/countries";
 export default {
   data() {
     return {
@@ -27,7 +26,6 @@ export default {
   async created() {
     const res = await axios.get(countiesDataAPI);
     this.countiesData = res.data;
-
     Chartkick.options = {
       borderWidth: 0,
       height: "400px",
@@ -45,4 +43,3 @@ export default {
   }
 };
 </script>
-

@@ -37,8 +37,8 @@
 
 <script>
 import axios from "axios";
-const statesData = "https://corona.lmao.ninja/states";
-const statesDataAPI = "https://corona.lmao.ninja/states";
+// const statesData = "https://corona.lmao.ninja/states";
+const statesDataAPI = "https://corona.lmao.ninja/v2/states";
 export default {
   data() {
     return {

@@ -144,8 +144,7 @@
 
 <script>
 import axios from "axios";
-const countiesDataAPI =
-  "https://corona.lmao.ninja/countries?sort=%7Bparameter%7D";
+const countiesDataAPI = "https://corona.lmao.ninja/v2/countries";
 import hero from "~/components/hero.vue";
 import states from "../components/states.vue";
 import counties from "../components/counties.vue";
@@ -160,7 +159,6 @@ export default {
       search: ""
     };
   },
-
   components: {
     hero,
     states,
@@ -172,7 +170,6 @@ export default {
   async created() {
     const res = await axios.get(countiesDataAPI);
     this.countiesData = res.data;
-
     Chartkick.options = {
       borderWidth: 0,
       height: "400px",

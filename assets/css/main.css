@@ -1,4 +1,6 @@
-
+.mycard img{
+  height: 42px;
+}
 .searchcard {
   background-color: #ecf0f1;
   color: #2c3e50;
@@ -117,7 +119,7 @@ td {
 label {
   display: block;
   margin: 35px 0;
-  
+  font-size: 28px;
 }
 .mycards {
   display: flex;

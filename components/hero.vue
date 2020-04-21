@@ -10,6 +10,10 @@
           target="plank"
         >worldometers</a>
       </h2>
+      <h2>
+        BY :
+        <a href="https://www.amradelata.com/" target="plank">amradelata</a>
+      </h2>
     </div>
 
     <div class="mycards">
@@ -18,26 +22,26 @@
         <img class="coronavirus" src="./Coronavirus.png" />
         <label>Coronavirus Cases</label>
         <label class="ar">حالات الفيروس التاجي</label>
-        <p class="is-size-2">{{cases}}</p>
+        <p class="is-size-2">{{this.myallData.cases}}</p>
       </div>
       <div class="mycard">
-        💀
+        <span>💀</span>
         <label>Deaths</label>
         <label class="ar">الوفيات</label>
-        <p class="is-size-2 has-text-danger">{{deaths}}</p>
+        <p class="is-size-2 has-text-danger">{{this.myallData.deaths}}</p>
       </div>
       <div class="mycard">
         <!-- 😊 -->
         <img class="recovered" src="./good-decision-48.png" />
         <label>Recovered</label>
         <label class="ar">تعافى</label>
-        <p class="is-size-2 has-text-primary">{{recovered}}</p>
+        <p class="is-size-2 has-text-primary">{{this.myallData.recovered}}</p>
       </div>
       <div class="mycard">
-        📅
+        <span>📅</span>
         <label>Last updated</label>
         <label class="ar">آخر تحديث</label>
-        <p class="is-size-2">{{updated}}</p>
+        <p class="is-size-2">{{this.updated}}</p>
       </div>
     </div>
     <div class="mygif">
@@ -54,24 +58,20 @@
 </template>
 
 <script>
+import axios from "axios";
+const allData = "https://corona.lmao.ninja/v2/all";
 export default {
   data() {
     return {
-      allData: [],
-      cases: "",
-      deaths: "",
-      recovered: "",
-      updated: "",
-      chartData: []
+      myallData: [],
+      chartData: [],
+      updated: ""
     };
   },
   async created() {
-    // total number
-    let covid = require("novelcovid");
-    this.allData = await covid.all();
-    this.cases = this.allData.cases;
-    this.deaths = this.allData.deaths;
-    this.recovered = this.allData.recovered;
+    const res = await axios.get(allData);
+    this.myallData = res.data;
+    console.log(this.myallData);
     var today = new Date();
     var date =
       today.getDate() +
@@ -79,7 +79,6 @@ export default {
       (today.getMonth() + 1) +
       "-" +
       today.getFullYear();
-
     this.updated = date;
 
     Chartkick.options = {
@@ -88,9 +87,9 @@ export default {
       colors: ["#ecf0f1", "#f14668 ", "#00d1b2 "]
     };
     this.chartData = [
-      ["cases", this.cases],
-      ["deaths", this.deaths],
-      ["recovered", this.recovered]
+      ["cases", this.myallData.cases],
+      ["deaths", this.myallData.deaths],
+      ["recovered", this.myallData.recovered]
     ];
   }
 };
