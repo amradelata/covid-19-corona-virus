@@ -43,6 +43,30 @@
         <label class="ar">آخر تحديث</label>
         <p class="is-size-2">{{this.updated}}</p>
       </div>
+      <div class="mycard">
+        <img class="coronavirus" src="./Coronavirus.png" />
+        <label>Today Cases</label>
+        <label class="ar">حالات اليوم</label>
+        <p class="is-size-2">{{this.myallData.todayCases}}</p>
+      </div>
+      <div class="mycard">
+        <span>💀</span>
+        <label>Today Deaths</label>
+        <label class="ar">الوفيات اليوم</label>
+        <p class="is-size-2 has-text-danger">{{this.myallData.todayDeaths}}</p>
+      </div>
+      <div class="mycard">
+        <img class="coronavirus" src="./Critical.png" />
+        <label>Critical</label>
+        <label class="ar">حالات حرجة</label>
+        <p class="is-size-2 has-text-danger">{{this.myallData.critical}}</p>
+      </div>
+      <div class="mycard">
+        <span>🧪</span>
+        <label>Tests</label>
+        <label class="ar">حالات المختبرة</label>
+        <p class="is-size-2">{{this.myallData.tests}}</p>
+      </div>
     </div>
     <div class="mygif">
       <img src="./mygif.gif" />
