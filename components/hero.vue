@@ -7,12 +7,12 @@
         المصدر/Source :
         <a
           href="https://www.worldometers.info/coronavirus/"
-          target="plank"
+          target="_blank"
         >worldometers</a>
       </h2>
       <h2>
         BY :
-        <a href="https://www.amradelata.com/" target="plank">amradelata</a>
+        <a href="https://www.amradelata.com/" target="_blank">amradelata</a>
       </h2>
     </div>
 
@@ -22,20 +22,20 @@
         <img class="coronavirus" src="./Coronavirus.png" />
         <label>Coronavirus Cases</label>
         <label class="ar">حالات الفيروس التاجي</label>
-        <p class="is-size-2">{{this.myallData.cases}}</p>
+        <p class="is-size-2">{{this.allcasesModify}}</p>
       </div>
       <div class="mycard">
         <span>💀</span>
         <label>Deaths</label>
-        <label class="ar">الوفيات</label>
-        <p class="is-size-2 has-text-danger">{{this.myallData.deaths}}</p>
+        <label class="ar">وفيات</label>
+        <p class="is-size-2 has-text-danger">{{this.alldethModify}}</p>
       </div>
       <div class="mycard">
         <!-- 😊 -->
         <img class="recovered" src="./good-decision-48.png" />
         <label>Recovered</label>
         <label class="ar">تعافى</label>
-        <p class="is-size-2 has-text-primary">{{this.myallData.recovered}}</p>
+        <p class="is-size-2 has-text-primary">{{this.allRecoveredModify}}</p>
       </div>
       <div class="mycard">
         <span>📅</span>
@@ -47,28 +47,30 @@
         <img class="coronavirus" src="./Coronavirus.png" />
         <label>Today Cases</label>
         <label class="ar">حالات اليوم</label>
-        <p class="is-size-2">{{this.myallData.todayCases}}</p>
+        <p class="is-size-2">{{this.allTodayCasesModify}}</p>
       </div>
       <div class="mycard">
         <span>💀</span>
         <label>Today Deaths</label>
-        <label class="ar">الوفيات اليوم</label>
-        <p class="is-size-2 has-text-danger">{{this.myallData.todayDeaths}}</p>
+        <label class="ar">وفيات اليوم</label>
+        <p class="is-size-2 has-text-danger">{{this.allTodayDeathModify}}</p>
       </div>
       <div class="mycard">
         <img class="coronavirus" src="./Critical.png" />
         <label>Critical</label>
         <label class="ar">حالات حرجة</label>
-        <p class="is-size-2 has-text-danger">{{this.myallData.critical}}</p>
+        <p class="is-size-2 has-text-danger">{{this.allCriticalModify}}</p>
       </div>
       <div class="mycard">
         <span>🧪</span>
         <label>Tests</label>
         <label class="ar">حالات المختبرة</label>
-        <p class="is-size-2">{{this.myallData.tests}}</p>
+        <p class="is-size-2">{{this.allTestsModify}}</p>
       </div>
     </div>
     <div class="mygif">
+      <h1 style="text-align: center;">flatten the curve of coronavirus</h1>
+
       <img src="./mygif.gif" />
     </div>
     <pie-chart
@@ -89,13 +91,34 @@ export default {
     return {
       myallData: [],
       chartData: [],
-      updated: ""
+      updated: "",
+      allcasesModify: "",
+      alldethModify: "",
+      allRecoveredModify: "",
+      allTodayCasesModify: "",
+      allTodayDeathModify: "",
+      allCriticalModify: "",
+      allTestsModify: ""
     };
   },
   async created() {
     const res = await axios.get(allData);
     this.myallData = res.data;
     console.log(this.myallData);
+    this.allcasesModify = this.myallData.cases.toLocaleString();
+
+    this.alldethModify = this.myallData.deaths.toLocaleString();
+
+    this.allRecoveredModify = this.myallData.recovered.toLocaleString();
+
+    this.allTodayCasesModify = this.myallData.todayCases.toLocaleString();
+
+    this.allTodayDeathModify = this.myallData.todayDeaths.toLocaleString();
+
+    this.allCriticalModify = this.myallData.critical.toLocaleString();
+
+    this.allTestsModify = this.myallData.tests.toLocaleString();
+
     var today = new Date();
     var date =
       today.getDate() +

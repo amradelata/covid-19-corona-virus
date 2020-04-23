@@ -6,85 +6,56 @@
       <div class="mybuttonDisktop">
         <div class="field has-addons">
           <div class="control" style="width: 100%">
-            <input
-              class="input"
-              type="text"
-              placeholder="Find a Country"
-              v-model="search"
-              v-on:keyup.enter="showSearch"
-            />
+            <input class="input" type="text" placeholder="Find a Country" v-model="search" />
           </div>
-          <div class="control" @click="showSearch">
+          <div class="control">
             <a class="button is-info">Search</a>
           </div>
         </div>
         <!--  -->
 
-        <div
-          class="searchcard"
-          style=" padding: 20px 0"
-          v-for="item in myresolts"
-          :key="item.country"
-        >
-          <div class="insearchcard">
-            <label>Country :</label>
-            <span>{{item.country}}</span>
+        <div>
+          <div
+            class="searchcard"
+            style=" padding: 20px 0"
+            v-for="item in myresolts"
+            :key="item.country"
+          >
+            <div class="singleSearchCard">
+              <div class="insearchcard">
+                <label>Country :</label>
+                <span>{{item.country}}</span>
+              </div>
+              <div class="insearchcard">
+                <label>Cases :</label>
+                <span>{{item.cases}}</span>
+              </div>
+              <div class="insearchcard">
+                <label>Today Cases :</label>
+                <span>{{item.todayCases}}</span>
+              </div>
+              <div class="insearchcard">
+                <label>Deaths :</label>
+                <span>{{item.deaths}}</span>
+              </div>
+              <div class="insearchcard">
+                <label>Today Deaths :</label>
+                <span>{{item.todayDeaths}}</span>
+              </div>
+              <div class="insearchcard">
+                <label>Recovered :</label>
+                <span>{{item.recovered}}</span>
+              </div>
+              <div class="insearchcard">
+                <label>Active :</label>
+                <span>{{item.active}}</span>
+              </div>
+              <div class="insearchcard">
+                <label>critical :</label>
+                <span>{{item.critical}}</span>
+              </div>
+            </div>
           </div>
-          <div class="insearchcard">
-            <label>Cases :</label>
-            <span>{{item.cases}}</span>
-          </div>
-          <div class="insearchcard">
-            <label>Today Cases :</label>
-            <span>{{item.todayCases}}</span>
-          </div>
-          <div class="insearchcard">
-            <label>Deaths :</label>
-            <span>{{item.deaths}}</span>
-          </div>
-          <div class="insearchcard">
-            <label>Today Deaths :</label>
-            <span>{{item.todayDeaths}}</span>
-          </div>
-          <div class="insearchcard">
-            <label>Recovered :</label>
-            <span>{{item.recovered}}</span>
-          </div>
-          <div class="insearchcard">
-            <label>Active :</label>
-            <span>{{item.active}}</span>
-          </div>
-          <div class="insearchcard">
-            <label>critical :</label>
-            <span>{{item.critical}}</span>
-          </div>
-          <div class="insearchcard">
-            <label>casesPerOneMillion :</label>
-            <span>{{item.casesPerOneMillion}}</span>
-          </div>
-
-          <!-- pie -->
-          <!-- <div ref="piesearch" style="  padding: 20px 0" class="insearchcardFull">
-            <pie-chart
-              v-for="item in myresolts"
-              :key="item.country"
-              :data="[['cases', item.cases],['Today Cases', item.todayCases],['Deaths', item.deaths],['Today Deaths', item.todayDeaths],['recovered', item.recovered],['active', item.active],['critical', item.critical],['casesPerOneMillion', item.casesPerOneMillion]]"
-              :donut="true"
-              legend="bottom"
-              download="boom"
-            ></pie-chart>
-          </div>-->
-          <!-- pie -->
-          <!-- line -->
-          <!-- <div ref="linesearch" style="  padding: 20px 0" class="insearchcardFull">
-            <line-chart
-              :data="[['cases', item.cases],['deaths', countiesDataSerach.deaths],['Today Cases', countiesDataSerach.todayCases],['Today Deaths', countiesDataSerach.todayDeaths],['recovered', countiesDataSerach.recovered],['active', countiesDataSerach.active],['critical', countiesDataSerach.critical],['casesPerOneMillion', countiesDataSerach.casesPerOneMillion]]"
-              :donut="true"
-              legend="bottom"
-              download="item"
-            ></line-chart>
-          </div>-->
-          <!-- line -->
         </div>
       </div>
       <!--  -->
@@ -186,11 +157,6 @@ export default {
     };
   },
   methods: {
-    showSearch() {
-      this.$refs["linesearch"].style.display = "block";
-      this.$refs["piesearch"].style.display = "block";
-      this.$refs["mysearchdiv"].style.display = "block";
-    },
     showcounties() {
       this.$refs["states"].style.display = "none";
       this.$refs["piegraph"].style.display = "none";
